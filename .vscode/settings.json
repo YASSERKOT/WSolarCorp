@@ -1,0 +1,3 @@
+{
+    "python.pythonPath": "${workspaceFolder}/drf_venv/bin/python"
+}
