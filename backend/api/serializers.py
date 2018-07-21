@@ -18,5 +18,5 @@ class LayerSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
         model = Layer
-        fields = ('id', 'identifier','name', 'high', 'width','date_created', 'date_modified')
+        fields = ('id', 'identifier','name', 'hight', 'width','date_created', 'date_modified')
         read_only_fields = ('id', 'date_created', 'date_modified')
