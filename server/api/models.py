@@ -1,5 +1,7 @@
 from django.db import models
 import os
+import json
+from copy import deepcopy
 
 class User(models.Model):
     """This class represents the User model."""
@@ -29,4 +31,30 @@ class Layer(models.Model):
 
 class Regions():
     """ this class represents the Region model which read from the files geoJson file """
-    
+    def getAllRegions():
+        """
+        d = {'continent': {'name': '',
+                        'subregion': '',
+                        'country': {'name': '',
+                                    'formal_en': '',
+                                    'coordinates': {}
+                                    }
+                        }
+        }
+        lst = []
+        with open('custom.geo.json') as f:
+            data = json.load(f)
+        for feature in data['features']:
+            d['continent']['name'] = feature['properties']['continent']
+            d['continent']['subregion'] = feature['properties']['subregion']
+            d['continent']['country']['name'] = feature['properties']['name']
+            d['continent']['country']['formal_en'] = feature['properties']['formal_en']
+            d['continent']['country']['coordinates'] = feature['geometry']['coordinates']
+            lst.append(deepcopy(d))
+
+        return lst
+        """
+        with open('custom.geo.json') as f:
+            data = json.load(f)
+        jsonData = json.dumps(data)
+        return jsonData

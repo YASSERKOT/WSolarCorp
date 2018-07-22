@@ -1,6 +1,14 @@
 {
     "/users": {
-        "target": "http://localhost:8000",
+        "target": "http://localhost:8000/users",
         "secure": false
-    }
+    },
+    "/regions": {
+      "target": "http://localhost:8000/regions",
+      "secure": false
+  },
+  "/users/layer": {
+    "target": "http://localhost:8000/users/layer",
+    "secure": false
+  }
 }
