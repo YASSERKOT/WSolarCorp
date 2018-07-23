@@ -37,7 +37,7 @@ def showRegions(self):
     """ This method defines the display behaviour of our rest api for the regions from the database files"""
     lst_results = Regions.getAllRegions()
     #text = "<h1>welcome to my app number %s!</h1>"% number
-    return HttpResponse(json.dumps(lst_results), content_type="application/json")
+    return HttpResponse(lst_results, content_type="application/json")
 
 
 # This is the view for the Home page where we are going to 
