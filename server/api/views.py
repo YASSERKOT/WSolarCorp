@@ -36,11 +36,10 @@ class Layer_detail(generics.RetrieveUpdateDestroyAPIView):
 def showRegions(self):
     """ This method defines the display behaviour of our rest api for the regions from the database files"""
     lst_results = Regions.getAllRegions()
-    #text = "<h1>welcome to my app number %s!</h1>"% number
     return HttpResponse(lst_results, content_type="application/json")
 
+def showFiltredRegions(self, arg):
+    """ This method defines the display behaviour of our rest api for the regions from the database files"""
+    lst_results = Regions.getRegion(arg)
 
-# This is the view for the Home page where we are going to 
-#class HomePageView(TemplateView):
-#    def get(self, request, **kwargs):
-#        return render(request, 'index.html', context=None)
+    return HttpResponse(lst_results, content_type="application/json")

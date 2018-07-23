@@ -32,7 +32,12 @@ class Layer(models.Model):
 class Regions():
     """ this class represents the Region model which read from the files geoJson file """
     def getAllRegions():
-        """
+        with open('custom.geo.json') as f:
+            data = json.load(f)
+        jsonData = json.dumps(data)
+        return jsonData
+
+    def getRegion(name):
         d = {'continent': {'name': '',
                         'subregion': '',
                         'country': {'name': '',
@@ -45,16 +50,12 @@ class Regions():
         with open('custom.geo.json') as f:
             data = json.load(f)
         for feature in data['features']:
-            d['continent']['name'] = feature['properties']['continent']
-            d['continent']['subregion'] = feature['properties']['subregion']
-            d['continent']['country']['name'] = feature['properties']['name']
-            d['continent']['country']['formal_en'] = feature['properties']['formal_en']
-            d['continent']['country']['coordinates'] = feature['geometry']['coordinates']
-            lst.append(deepcopy(d))
-
-        return lst
-        """
-        with open('custom.geo.json') as f:
-            data = json.load(f)
-        jsonData = json.dumps(data)
+            if feature['properties']['name'].upper() == name.upper() :
+                d['continent']['name'] = feature['properties']['continent']
+                d['continent']['subregion'] = feature['properties']['subregion']
+                d['continent']['country']['name'] = feature['properties']['name']
+                d['continent']['country']['formal_en'] = feature['properties']['formal_en']
+                d['continent']['country']['coordinates'] = feature['geometry']['coordinates']
+        jsonData = json.dumps(d)
         return jsonData
+        
