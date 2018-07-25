@@ -1,2 +1,36 @@
+Python 3.6.2 :: Anaconda custom (64-bit)
 Django==2.0.7
+
+certifi==2018.4.16
+chardet==3.0.4
+click==6.7
+click-plugins==1.0.3
+cligj==0.4.0
+cycler==0.10.0
+descartes==1.1.0
+Django==2.0.7
+djangorestframework==3.8.2
+Fiona==1.7.13
+geojsonio==0.0.3
+geopandas==0.2.1
+github3.py==1.1.0
+idna==2.7
+kiwisolver==1.0.1
+matplotlib==2.2.2
+munch==2.3.2
+numpy==1.14.5
+pandas==0.23.3
+pyparsing==2.2.0
+pyproj==1.9.5.1
+python-dateutil==2.7.3
 pytz==2018.5
+requests==2.19.1
+Shapely==1.5.17.post1
+six==1.11.0
+uritemplate==3.0.0
+urllib3==1.23
+
+---- 
+
+Angular CLI: 6.0.8
+Node: 8.9.4

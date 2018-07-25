@@ -58,4 +58,3 @@ class Regions():
                 d['continent']['country']['coordinates'] = feature['geometry']['coordinates']
         jsonData = json.dumps(d)
         return jsonData
-        

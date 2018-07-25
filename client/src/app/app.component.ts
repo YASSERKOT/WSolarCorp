@@ -41,12 +41,16 @@ export class AppComponent implements OnInit {
     });
     function whenClicked(e) {
       console.log(e);
+      L.marker([e.latlng.lat, e.latlng.lng], {icon: myIcon}).bindPopup(e.layerPoint.x + ' ; ' + e.layerPoint.y).addTo(myfrugalmap).openPopup();
     }
     function onEachFeature(feature, layer) {
       // does this feature have a property named popupContent?
       layer.on({
         click: whenClicked
       });
+      if (feature.properties.name == 'Tunisia') {
+        layer.setStyle({fillColor : 'red'});
+      }
     }
      this.http.get('http://localhost:4200/regions/regions/').subscribe((data: any) => {
       L.geoJSON(data, {
